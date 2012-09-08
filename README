@@ -1,0 +1,55 @@
+Email Announcement System
+
+- Companies need a way to allow users to easily send notices to everyone in the company.
+- Those who can send notices must be able to pick the recipients easily.
+- The best way to do it is by choosing departments.
+- Users should be able to create departments as needed.
+
+- Users should be able to send file attachments.
+- Users should be able to see a history of announcements sent.
+- Users should be able to see which messages have been sent to what user.
+- The sending email address will be the email address of the user.
+- Users should be able to see who has downloaded the attachments on the email.
+- This is great for ensuring that users have viewed the required attachments of an announcement.
+
+Things we have to watch out for:
+
+- To not trigger SPAM quotas, sending will be limited to 180 recipients per hour.
+- File attachments will be converted to links in the message to files stored in the application. Doing it this way reduces load on the mail server and allows a company proxy server to cache the file reducing the bandwidth requirements for the company.
+- To reduce false positives for virus scanners, message format will be text only. 
+- For rich formatted messages, recommendation is to attach PDF or Word document of the announcement with the message.
+
+Announcement
+- name
+- body
+- status
+- send_at
+- metadata
+	- files
+		- filename
+		- size
+		- type
+	- started_at
+	- completed_at
+	- sent_messages
+	- total_message_count
+
+Employee
+- name
+- email
+
+Department
+- name
+
+DepartmentEmployee
+- department_id
+- employee_id
+
+AnnouncementRecipient
+- announcement_id
+- employee_id
+- status
+- metadata
+	- downloaded_files
+		- filename
+		- downloaded_at

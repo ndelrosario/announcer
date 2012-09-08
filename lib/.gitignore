@@ -1,0 +1,7 @@
+cache/*
+log/*
+web/uploads/*
+data/sql/*
+VERSION
+.DS_Store
+.sass-cache
