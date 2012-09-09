@@ -8,3 +8,10 @@ all:
       dsn:      mysql:host=localhost;dbname=announcer
       username: root
       password: 
+
+dev:
+	doctrine:
+	param:
+		dsn: mysql:host=127.0.0.1;dbname=announcer_dev
+		username: announcer
+		password: announcer
